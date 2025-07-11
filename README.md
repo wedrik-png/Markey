@@ -6,7 +6,7 @@ Markey is a lightweight bookmark launcher built with AutoHotkey v2. It lets you 
 
 ## 🚀 Features
 
-- ✅ Save bookmarks directly from clipboard
+- ✅ Save bookmarks with a hotkey
 - ✅ Launch a searchable list of bookmarks
 - ✅ Tiny, no-bloat, no external dependencies
 - ✅ Comes with a compiled `.exe` — AHK installation needed only for customizations
