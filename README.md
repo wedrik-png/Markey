@@ -25,6 +25,19 @@ Markey is a lightweight bookmark launcher built with AutoHotkey v2. It lets you 
 > Hotkeys are customizable in the script if needed.
 
 ---
+## 📸 Screenshots
+
+### 🖼️ Bookmarking a Website
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/25d0b5fe-6de5-4902-bd53-842bef7fd6fc" />
+<p>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> to bookmark the currently opened website and give it a name.</p>
+
+<br>
+
+### 🖼️ Opening Bookmarks
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/10ab36a7-8f44-44d7-b148-2b0005db6f4f" />
+<p>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>B</kbd> to open the bookmarks list (hotkey works system-wide). Enter the index number of the bookmark to open it.</p>
+
+---
 
 ## 🛠️ Setup
 
