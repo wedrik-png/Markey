@@ -8,12 +8,17 @@ import book_utils
 from PyQt5.QtCore import Qt, QTimer
 from edit_from_markey import MyApp_3
 import win32gui, win32con
+from dict_to_ahk_arr import write_json_to_files
+
+
 
 print(os.getcwd())
 
 with open("bookmarks.json", "r") as f:    #load the json
     book = json.load(f)
 book_utils.getBook(book)
+write_json_to_files(book)
+
 
 def on_item_clicked(item):  #Open the website on clicking
     global keyClicked
