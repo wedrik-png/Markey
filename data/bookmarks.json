@@ -1,0 +1,32 @@
+{
+  "Google": {
+    "link": "https://www.google.com",
+    "nkey": 1,
+    "tag": "Social",
+    "index": 1
+  },
+  "YouTube": {
+    "link": "https://www.youtube.com",
+    "nkey": 2,
+    "tag": "Social",
+    "index": 2
+  },
+  "Gmail": {
+    "link": "https://mail.google.com",
+    "nkey": 3,
+    "tag": "Social",
+    "index": 3
+  },
+  "GitHub": {
+    "link": "https://github.com",
+    "nkey": 4,
+    "tag": "Dev",
+    "index": 4
+  },
+  "ChatGPT": {
+    "link": "https://chat.openai.com",
+    "nkey": 5,
+    "tag": "AI",
+    "index": 5
+  }
+}

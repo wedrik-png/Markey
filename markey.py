@@ -4,11 +4,11 @@ from PyQt5.QtWidgets import (
     QMessageBox, QVBoxLayout, QWidget, QListWidget, QMenu,
     QHBoxLayout, QComboBox
 )
-import book_utils
+import src.book_utils as book_utils
 from PyQt5.QtCore import Qt, QTimer
-from edit_from_markey import MyApp_3
+from src.edit_from_markey import MyApp_3
 import win32gui, win32con
-from dict_to_ahk_arr import write_json_to_files
+from src.dict_to_ahk_arr import write_json_to_files
 
 
 

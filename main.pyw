@@ -2,10 +2,10 @@ import keyboard, subprocess, os, sys, shutil, threading, json
 from pathlib import Path
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
-import win32com.client
+import win32com.client   
 from PyQt5.QtWidgets import QApplication
 from markey import MyApp as MarkeyWindow
-from addFromUI import MyApp_2, getLink
+#from addFromUI import MyApp_2, getLink
 from PyQt5.QtCore import Qt
 from dict_to_ahk_arr import write_json_to_files
 
@@ -15,18 +15,14 @@ with open("bookmarks.json") as f: #load json
 
 write_json_to_files(book)
 
-subprocess.Popen(["AutoHotkey.exe", "main_ahk.ahk"], shell=True)
+subprocess.Popen(["AutoHotkey.exe", "main_ahk.ahk"])
 app_dir = Path(__file__).parent.absolute()
 os.chdir(app_dir)
 
 def runScript(path):
     subprocess.Popen(["python", path], shell = True)
-    #subprocess.Popen([sys.executable, path], 
-                #creationflags=subprocess.DETACHED_PROCESS)
-    #subprocess.Popen(["launch_markey.bat"], shell=True)
 
-
-
+"""
 def open_addfromui():
     link = getLink()
     uw = MyApp_2(book, link)
@@ -34,6 +30,7 @@ def open_addfromui():
     uw.show()
     uw.raise_()
     uw.activateWindow()
+"""
 
 
 

@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Runtime / temp
+runtime/
+cache_/
+logs.txt
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local tools (don’t upload binaries)
+AutoHotkey.exe
