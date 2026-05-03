@@ -28,5 +28,17 @@
         "nkey": 5,
         "tag": "AI",
         "index": 5
+    },
+    "AHK v2 script path ": {
+        "link": "https://chatgpt.com/c/69f750ea-1544-83e8-b4eb-57a13c9dd29d",
+        "nkey": 6,
+        "tag": "other",
+        "index": 6
+    },
+    "Inbox (8,405) - junejamanan6@gmail.com - Gmail ": {
+        "link": "https://mail.google.com/mail/u/0/#inbox",
+        "nkey": 7,
+        "tag": "other",
+        "index": 7
     }
 }

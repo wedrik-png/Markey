@@ -4,27 +4,27 @@
 +Esc::ExitApp  
 
 
-SetWorkingDir A_ScriptDir
+SetWorkingDir A_ScriptDir "\.."
 
 ^+b::
 {
     ;markeyPath := A_ScriptDir "\markey.py"
     ;Run markeyPath
     ;Run "pythonw.exe markey.py", A_ScriptDir
-    Run "markey_quick.ahk"
+    Run A_ScriptDir "\markey_quick.ahk"
 }
 ^!b::
 {
-    Run "pythonw.exe markey.py", A_ScriptDir
+    Run '"pythonw.exe" "src\markey.py"'
 }
 ^+!b::
 {
     Send "^l"
-    Sleep 30
+    Sleep 1000
     Send "^c"
-    ClipWait 0.5
+    ClipWait
 
     url := A_Clipboard
 
-    Run 'pythonw.exe addFromUI.py "' url '"'
+    Run 'pythonw.exe src/addFromUI.py "' url '"'
 }

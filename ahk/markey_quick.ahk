@@ -1,7 +1,7 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-cacheDir := A_ScriptDir "\cache_"
+cacheDir := A_ScriptDir "\..\cache_"
 
 ;txt -> array
 readFileToArray(filePath) {

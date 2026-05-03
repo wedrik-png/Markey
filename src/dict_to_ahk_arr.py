@@ -1,10 +1,11 @@
 import json, os
 
-with open("bookmarks.json") as f: #load json
+with open("data/bookmarks.json") as f: #load json
     book = json.load(f)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-cache_dir = os.path.join(BASE_DIR, "runtime", "cache") #to save the arrays to txt
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # project root
+cache_dir = os.path.join(BASE_DIR, "cache_")
 
 os.makedirs(cache_dir, exist_ok=True)
 

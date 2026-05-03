@@ -1,14 +1,16 @@
 import pyautogui as pg
-import pygetwindow, sys
+import pygetwindow, sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+ 
+ 
 import pyperclip, time, json, src.book_utils as book_utils
 from PyQt5.QtWidgets import QWidget, QFormLayout, QLineEdit, QSpinBox, QComboBox, QApplication, QHBoxLayout, QPushButton, QMessageBox
 from PyQt5.QtCore import Qt
 from datetime import datetime
-import sys
 
 
 print("Initiated addFromUI.py ", datetime.now() )
-with open("bookmarks.json", "r") as f:    #load the json
+with open("data/bookmarks.json", "r") as f:    #load the json
     book = json.load(f)
 
 book_utils.getBook(book)

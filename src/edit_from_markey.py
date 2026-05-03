@@ -2,7 +2,7 @@ import pyperclip, time, json, src.book_utils as book_utils, sys
 from PyQt5.QtWidgets import QWidget, QFormLayout, QLineEdit, QSpinBox, QComboBox, QApplication, QHBoxLayout, QPushButton, QMessageBox, QDialog
 from PyQt5.QtCore import Qt
 
-with open("bookmarks.json", "r") as f:    #load the json
+with open("data/bookmarks.json", "r") as f:    #load the json
     book = json.load(f)
 book_utils.getBook(book)
 

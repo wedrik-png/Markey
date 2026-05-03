@@ -1,4 +1,6 @@
-import json, subprocess
+import json, subprocess, sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.dict_to_ahk_arr import write_json_to_files
 
 
@@ -56,7 +58,7 @@ def deleteBook(x):
 
     
 def overwriteBook():        #overwrite the json
-    with open("bookmarks.json", "w") as f:
+    with open("data/bookmarks.json", "w") as f:
         json.dump(book, f, indent=4)
     write_json_to_files(book)
 

@@ -1,21 +1,24 @@
 import keyboard, subprocess, os, sys, shutil, threading, json
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from pathlib import Path
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
 import win32com.client   
 from PyQt5.QtWidgets import QApplication
-from markey import MyApp as MarkeyWindow
+from src.markey import MyApp as MarkeyWindow
 #from addFromUI import MyApp_2, getLink
 from PyQt5.QtCore import Qt
-from dict_to_ahk_arr import write_json_to_files
+from src.dict_to_ahk_arr import write_json_to_files
 
-with open("bookmarks.json") as f: #load json
+with open("data/bookmarks.json") as f: #load json
     book = json.load(f)
 
 
 write_json_to_files(book)
 
-subprocess.Popen(["AutoHotkey.exe", "main_ahk.ahk"])
+subprocess.Popen(["AutoHotkey.exe", "ahk/main_ahk.ahk"])
 app_dir = Path(__file__).parent.absolute()
 os.chdir(app_dir)
 
@@ -86,7 +89,7 @@ def main():
         print("Working directory: ", os.getcwd())
         app = QApplication([])
         app.setQuitOnLastWindowClosed(False)
-        icon = QIcon("icon2.ico")
+        icon = QIcon("icon_markey_tray.ico")
         tray = QSystemTrayIcon(icon)
         tray.setToolTip("Markey")
 
@@ -106,7 +109,7 @@ def main():
         tray.setContextMenu(menu)
         tray.show()
 
-        markey_action.triggered.connect(lambda: runScript("Markey.py"))
+        markey_action.triggered.connect(lambda: runScript("src/Markey.py"))
         startup_action.triggered.connect(toggle_startup)
         exit_action.triggered.connect(close_app)
 
