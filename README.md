@@ -1,92 +1,109 @@
 # Markey
 
-Markey is a lightweight bookmark manager that combines Python and AutoHotkey to quickly add, list, and open bookmarks without leaving your workflow.  
-Originally built entirely in AutoHotkey, the latest version has been mostly rewritten in Python for better performance and more features.
+Markey is a lightweight bookmark manager that combines Python and AutoHotkey to quickly add, search, and open bookmarks without leaving your workflow.
+Originally built entirely in AutoHotkey, it has now been largely rewritten in Python for better performance and scalability.
 
 ---
 
 ## ✨ Features
-- **Quick Bookmarking** — Add bookmarks instantly via a hotkey.
-- **Organization** — Choose or create new tags while bookmarking for better organization.
-- **Fast Access** — Search and open bookmarks directly from a tray menu or hotkey. Filter by tags.
-- **Lightweight & Portable** — No heavy database or server required.
-- **Open with key** - A unique feature that lets you open a bookmark in a second.
+
+* **Quick Bookmarking** — Add bookmarks instantly using a hotkey
+* **Tag Organization** — Assign or create tags while bookmarking
+* **Fast Access** — Search and open bookmarks via hotkeys or menu
+* **Open with Key** — Launch bookmarks instantly using numeric keys
+* **Lightweight & Portable** — No database or server required
 
 ---
 
 ## 📦 Installation
 
----
+### For General Users
 
-## For general users
-If you just want to **use** Markey without touching the code:
+If you just want to use Markey:
 
-1. **Download the latest release** from the [Releases page](https://github.com/Markey/releases).
-2. Extract the downloaded zip.
+1. Download the latest release from the
+   https://github.com/wedrik-png/Markey/releases
+2. Extract the ZIP file
 3. Run `main.exe`
-4. Enjoy fast, simple bookmark management from your system tray.
+4. Start using Markey from the system tray
 
-> No installation required — Markey is fully portable.
+> No installation required — fully portable.
 
 ---
-## For developers
 
-### 1. Clone the Repository
+### For Developers
+
+#### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/wedrik-png/Markey.git
 cd Markey
 ```
-### 2. Create virtual environment
+
+#### 2. Create a Virtual Environment
 
 ```bash
-python -m create venv venv
-venv/Scripts/activate
+python -m venv venv
+venv\Scripts\activate
 ```
 
-### 2. Install Python Requirements
+#### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Install AutoHotkey v2
-- Download from: [https://www.autohotkey.com/](https://www.autohotkey.com/)
+#### 4. Install AutoHotkey v2
+
+Download from: https://www.autohotkey.com/
 
 ---
 
 ## 🚀 Usage
 
-### **1. Start the Main App**
+### Start the Application
+
 ```bash
 python main.pyw
 ```
-Or, if you’re using the compiled `.exe` from the [Releases page](https://github.com/Markey/releases)., just run:
+
+Or run the compiled executable:
+
 ```
-Main.exe
+main.exe
 ```
 
-### **2. Hotkeys**
-- **Add Bookmark** → `Ctrl + Shift + Alt + B`
-- **Open Bookmark (quick: only uses the key)** → `Ctrl + Shift + B`
-  - **Open with key** → On adding a bookmark, you choose a *key* (a number) for that website. You can launch it quickly by triggering the hotkey and entering the corresponding key.
-- **Open Bookmark (detailed: preferred for managing bookmarks)** → `Ctrl + Alt + B`  
-   - **Search bar** → Search for a bookmark  
-   - **Filter by tag** → Quickly filter the bookmark list by a specific tag  
-   - **Edit/delete bookmark** → Right clicking a bookmark opens menu to edit a bookmark  
-   - **Open with key** → same feature as the quick mode
-*(You can change them in the `.ahk` script.)*
+---
 
+## ⌨️ Hotkeys
+
+* **Add Bookmark** → `Ctrl + Shift + Alt + B`
+* **Quick Open (Key-based)** → `Ctrl + Shift + B`
+* **Full Manager View** → `Ctrl + Alt + B`
+
+### Features in Manager View
+
+* Search bookmarks
+* Filter by tag
+* Right-click to edit/delete
+* Open bookmarks using assigned keys
+
+---
 
 ## 📄 License
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+Licensed under the MIT License — see [LICENSE](LICENSE)
 
 ---
 
 ## 🤝 Contributing
-Pull requests are welcome!  
-For major changes, please open an issue first to discuss what you’d like to change.
+
+Pull requests are welcome.
+For major changes, open an issue first to discuss your ideas.
 
 ---
 
 ## 💬 Contact
-Created by **Manan Juneja**  
-GitHub: [https://github.com/wedrik-png](https://github.com/wedrik-png)
+
+Created by Manan Juneja
+GitHub: https://github.com/wedrik-png
