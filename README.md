@@ -10,7 +10,7 @@ Originally built entirely in AutoHotkey, the latest version has been mostly rewr
 - **Organization** — Choose or create new tags while bookmarking for better organization.
 - **Fast Access** — Search and open bookmarks directly from a tray menu or hotkey. Filter by tags.
 - **Lightweight & Portable** — No heavy database or server required.
-- **Open with key** - A unique feature that lets you open a bookmark in surprisingly fast time.
+- **Open with key** - A unique feature that lets you open a bookmark in a second.
 
 ---
 
@@ -35,6 +35,12 @@ If you just want to **use** Markey without touching the code:
 ```bash
 git clone https://github.com/wedrik-png/Markey.git
 cd Markey
+```
+### 2. Create virtual environment
+
+```bash
+python -m create venv venv
+venv/Scripts/activate
 ```
 
 ### 2. Install Python Requirements
@@ -65,41 +71,10 @@ Main.exe
 - **Open Bookmark (detailed: preferred for managing bookmarks)** → `Ctrl + Alt + B`  
    - **Search bar** → Search for a bookmark  
    - **Filter by tag** → Quickly filter the bookmark list by a specific tag  
-   - **Edit/delete bookmark** → Right clicking a bookmark opens menu to edit a bookmark (title, tag or key) and to delete one  
+   - **Edit/delete bookmark** → Right clicking a bookmark opens menu to edit a bookmark  
    - **Open with key** → same feature as the quick mode
-*(You can change these in the `.ahk` script.)*
+*(You can change them in the `.ahk` script.)*
 
----
-
-## 📂 File Structure
-```
-Markey/
-│
-├── main.pyw             # Main Python GUI / tray controller
-├── book_utils.py        # Bookmark handling logic
-├── edit_from_markey.py  # Editing system
-├── *.ahk                # AutoHotkey scripts for hotkeys
-├── bookmarks/
-│   ├── titles.txt
-│   ├── urls.txt
-│   └── index_count.txt
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🛠 How It Works
-1. **Adding a Bookmark**
-   - Hotkey triggers AutoHotkey → Sends URL & title to Python script → Saves in `bookmarks.json`.
-
-2. **Listing & Opening**
-   - Python GUI lists titles → Selecting one opens corresponding URL in default browser.
-
-3. **Editing/Deleting**
-   - By right clicking on bookmark in detailed window.
-
----
 
 ## 📄 License
 This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
