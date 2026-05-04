@@ -13,7 +13,6 @@ logs.txt
 Thumbs.db
 
 # Local tools (don’t upload binaries)
-AutoHotkey.exe
 icon_markey.ico
 icon_markey_tray.png
 icon2.ico
