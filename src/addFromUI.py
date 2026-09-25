@@ -180,6 +180,7 @@ if __name__ == "__main__":
     link_str = sys.argv[1]
     app = QApplication(sys.argv)
     window = MyApp_2(book, link_str)
+    window.setWindowFlags(window.windowFlags() | Qt.WindowStaysOnTopHint)
     window.show()
     print("opened addUI window", datetime.now())
     window.activateWindow()

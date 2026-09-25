@@ -236,7 +236,7 @@ class MyApp(QMainWindow):
                 self.edit_window.activateWindow()
                 self.edit_window.exec_()
                 self.repaint()
-                with open("bookmarks.json", "r") as f:
+                with open("data/bookmarks.json", "r") as f:
                     self.original_book = json.load(f)
                     self.book = self.original_book.copy()
 

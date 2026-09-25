@@ -1,8 +1,10 @@
-import keyboard, subprocess, os, sys, shutil, threading, json
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import subprocess, os, sys, shutil, threading, json
 from pathlib import Path
+
+app_dir = Path(__file__).parent.absolute()
+os.chdir(app_dir)
+sys.path.insert(0, str(app_dir))
+
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
 import win32com.client   
@@ -18,12 +20,17 @@ with open("data/bookmarks.json") as f: #load json
 
 write_json_to_files(book)
 
-subprocess.Popen(["AutoHotkey.exe", "ahk/main_ahk.ahk"])
-app_dir = Path(__file__).parent.absolute()
-os.chdir(app_dir)
+pythonw = Path(sys.executable)
+if pythonw.name.lower() == "python.exe":
+    candidate = pythonw.with_name("pythonw.exe")
+    if candidate.exists():
+        pythonw = candidate
+ahk_exe = app_dir / "AutoHotkey.exe"
+ahk_script = app_dir / "ahk" / "main_ahk.ahk"
+subprocess.Popen([str(ahk_exe), str(ahk_script), str(pythonw)], cwd=str(app_dir))
 
 def runScript(path):
-    subprocess.Popen(["python", path], shell = True)
+    subprocess.Popen([sys.executable, path])
 
 """
 def open_addfromui():
@@ -50,6 +57,11 @@ def main():
 
             # Detect path of currently running file (exe or py)
             target = sys.executable  # If .py → python.exe; if .exe → yourapp.exe
+            # Prefer pythonw so a console does not appear on login
+            if target.lower().endswith("python.exe"):
+                pythonw = os.path.join(os.path.dirname(target), "pythonw.exe")
+                if os.path.exists(pythonw):
+                    target = pythonw
             script = os.path.abspath(sys.argv[0])  # Actual script or exe file
 
             shell = win32com.client.Dispatch("WScript.Shell")

@@ -1,44 +1,440 @@
 {
-    "Google": {
-        "link": "https://www.google.com",
+    "ChatGPT ": {
+        "link": "https://chatgpt.com/",
         "nkey": 1,
-        "tag": "Social",
+        "tag": "AI",
         "index": 1
     },
-    "YouTube": {
-        "link": "https://www.youtube.com",
-        "nkey": 2,
-        "tag": "Social",
+    "Learncpp": {
+        "link": "https://www.learncpp.com/",
+        "nkey": 50,
+        "tag": "learning",
         "index": 2
     },
-    "Gmail": {
-        "link": "https://mail.google.com",
-        "nkey": 3,
-        "tag": "Social",
+    "Algomap DSA": {
+        "link": "https://algomap.io/",
+        "nkey": 51,
+        "tag": "learning",
         "index": 3
     },
-    "GitHub": {
-        "link": "https://github.com",
-        "nkey": 4,
-        "tag": "Dev",
+    "30 days of Python": {
+        "link": "https://github.com/Asabeneh/30-Days-Of-Python/tree/master/01_Day_Introduction",
+        "nkey": 52,
+        "tag": "other",
         "index": 4
     },
-    "ChatGPT": {
-        "link": "https://chat.openai.com",
-        "nkey": 5,
-        "tag": "AI",
+    "megathread - Piracy ": {
+        "link": "https://old.reddit.com/r/Piracy/wiki/megathread#wiki_.1F4DC_.279C_megathread",
+        "nkey": 40,
+        "tag": "Piracy",
         "index": 5
     },
-    "AHK v2 script path ": {
-        "link": "https://chatgpt.com/c/69f750ea-1544-83e8-b4eb-57a13c9dd29d",
-        "nkey": 6,
-        "tag": "other",
+    "Free Video Effects": {
+        "link": "https://freevideoeffect.com/premiere-pro/",
+        "nkey": 54,
+        "tag": "Video Editing",
         "index": 6
     },
-    "Inbox (8,405) - junejamanan6@gmail.com - Gmail ": {
-        "link": "https://mail.google.com/mail/u/0/#inbox",
-        "nkey": 7,
+    "Ideogram ": {
+        "link": "https://ideogram.ai/t/explore",
+        "nkey": 55,
+        "tag": "AI",
+        "index": 9
+    },
+    "Leonardo AI": {
+        "link": "https://app.leonardo.ai/",
+        "nkey": 3,
+        "tag": "AI",
+        "index": 10
+    },
+    "remaker.ai AI tools for image": {
+        "link": "https://remaker.ai/",
+        "nkey": 56,
+        "tag": "AI",
+        "index": 11
+    },
+    "Free Daz3d models": {
+        "link": "https://zonegfx.com/",
+        "nkey": 57,
+        "tag": "Piracy",
+        "index": 12
+    },
+    "Spaces - Hugging Face ": {
+        "link": "https://huggingface.co/spaces",
+        "nkey": 15,
+        "tag": "AI",
+        "index": 13
+    },
+    "AI Video Generator Pixelcut": {
+        "link": "https://www.pixelcut.ai/ai-video-generator",
+        "nkey": 58,
+        "tag": "AI",
+        "index": 14
+    },
+    "CBSE Syllabus 2025": {
+        "link": "https://cbseacademic.nic.in/curriculum_2025.html",
+        "nkey": 16,
         "tag": "other",
-        "index": 7
+        "index": 15
+    },
+    "AHK scripts reddit": {
+        "link": "https://www.reddit.com/r/AutoHotkey/comments/lvzqlx/share_your_most_useful_ahk_scripts_my_huge/",
+        "nkey": 59,
+        "tag": "other",
+        "index": 16
+    },
+    "Flow Launcher docs": {
+        "link": "https://www.flowlauncher.com/docs/#/README",
+        "nkey": 60,
+        "tag": "other",
+        "index": 17
+    },
+    "AHK exes": {
+        "link": "https://www.dcmembers.com/skrommel/downloads/",
+        "nkey": 61,
+        "tag": "other",
+        "index": 18
+    },
+    "draw.io diagram maker": {
+        "link": "https://app.diagrams.net/?src=about",
+        "nkey": 62,
+        "tag": "Tool",
+        "index": 19
+    },
+    "GitFluence - AI git command finder": {
+        "link": "https://www.gitfluence.com/",
+        "nkey": 63,
+        "tag": "AI",
+        "index": 20
+    },
+    "Jaipal Vishwakarma Math College": {
+        "link": "https://jaipalvishwakarma.in/new-courses/42/content?activeTab=Content",
+        "nkey": 64,
+        "tag": "learning",
+        "index": 21
+    },
+    "3DLOAD free 3d models": {
+        "link": "https://3d-load.net/",
+        "nkey": 65,
+        "tag": "Piracy",
+        "index": 22
+    },
+    "thepublishpress - video editing jobs": {
+        "link": "https://jobs.thepublishpress.com/",
+        "nkey": 66,
+        "tag": "Money",
+        "index": 23
+    },
+    "Roster - Work with top creators jobs for video editing": {
+        "link": "https://www.joinroster.co/for-talent",
+        "nkey": 67,
+        "tag": "Money",
+        "index": 24
+    },
+    "CBSE q papers": {
+        "link": "https://www.cbse.gov.in/cbsenew/question-paper.html",
+        "nkey": 17,
+        "tag": "other",
+        "index": 25
+    },
+    "Life Wiki ": {
+        "link": "https://www.notion.so/studentsheaven/Life-Wiki-194e7d16e0d88063bf3ef3ac0a9cb79f",
+        "nkey": 20,
+        "tag": "Productivity",
+        "index": 26
+    },
+    "Convert lottie json to Video/MP4 ": {
+        "link": "https://html5animationtogif.com/lottie-to-video",
+        "nkey": 68,
+        "tag": "Tool",
+        "index": 27
+    },
+    "GitHub ": {
+        "link": "https://github.com/",
+        "nkey": 30,
+        "tag": "Tool",
+        "index": 28
+    },
+    "stackblitz-labs/bolt.diy full stack web dev AI": {
+        "link": "https://github.com/stackblitz-labs/bolt.diy",
+        "nkey": 69,
+        "tag": "AI",
+        "index": 29
+    },
+    "Awesome Github": {
+        "link": "https://github.com/sindresorhus/awesome?tab=readme-ov-file",
+        "nkey": 21,
+        "tag": "Tool",
+        "index": 30
+    },
+    "Claude ": {
+        "link": "https://claude.ai/new",
+        "nkey": 2,
+        "tag": "AI",
+        "index": 32
+    },
+    "Jammable AI singer change": {
+        "link": "https://www.jammable.com/",
+        "nkey": 32,
+        "tag": "AI",
+        "index": 33
+    },
+    "Runway AI video generation": {
+        "link": "https://app.runwayml.com/video-tools/teams/junejamanan6/ai-tools/generate",
+        "nkey": 12,
+        "tag": "AI",
+        "index": 34
+    },
+    "OpenAI.fm ": {
+        "link": "https://www.openai.fm/",
+        "nkey": 13,
+        "tag": "AI",
+        "index": 35
+    },
+    "Bark - a Hugging Face Space tts expressions but bad": {
+        "link": "https://huggingface.co/spaces/suno/bark",
+        "nkey": 14,
+        "tag": "AI",
+        "index": 36
+    },
+    "Strivers A2Z DSA Course/Sheet ": {
+        "link": "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/",
+        "nkey": 18,
+        "tag": "learning",
+        "index": 37
+    },
+    "Genp gone": {
+        "link": "https://www.reddit.com/r/Piracy/comments/1kbt006/rgenp_has_been_banned/",
+        "nkey": 19,
+        "tag": "Piracy",
+        "index": 38
+    },
+    "Google Calendar": {
+        "link": "https://calendar.google.com/calendar/u/0/r/month?pli=1",
+        "nkey": 35,
+        "tag": "Productivity",
+        "index": 40
+    },
+    "Adobe Firefly - impaint": {
+        "link": "https://firefly.adobe.com/upload/inpaint",
+        "nkey": 10,
+        "tag": "AI",
+        "index": 41
+    },
+    "Diptych - modify images hf": {
+        "link": "https://huggingface.co/spaces/multimodalart/diptych-zero-shot-subject-driven",
+        "nkey": 24,
+        "tag": "AI",
+        "index": 42
+    },
+    "DeepSite - website frontend realtime Ai": {
+        "link": "https://huggingface.co/spaces/enzostvs/deepsite",
+        "nkey": 7,
+        "tag": "AI",
+        "index": 43
+    },
+    "Replikant docs": {
+        "link": "https://docs.replikant.ai/s/docs/doc/replikant-help-sfpDWkCvgb",
+        "nkey": 25,
+        "tag": "other",
+        "index": 44
+    },
+    "Font and text generator": {
+        "link": "https://www.font-generator.com/",
+        "nkey": 26,
+        "tag": "Tool",
+        "index": 45
+    },
+    "SARAL haryana": {
+        "link": "https://saralharyana.gov.in/",
+        "nkey": 28,
+        "tag": "other",
+        "index": 47
+    },
+    "Qwen ": {
+        "link": "https://chat.qwen.ai/",
+        "nkey": 4,
+        "tag": "AI",
+        "index": 48
+    },
+    "Google Gemini ": {
+        "link": "https://gemini.google.com/app",
+        "nkey": 5,
+        "tag": "AI",
+        "index": 49
+    },
+    "Gemini - gem storytelling": {
+        "link": "https://gemini.google.com/gem/e9bd06f8fb91",
+        "nkey": 6,
+        "tag": "AI",
+        "index": 50
+    },
+    "Phantom Editor \u2013 premiere pro Extensions AI": {
+        "link": "https://phantomeditor.video/",
+        "nkey": 29,
+        "tag": "Tool",
+        "index": 51
+    },
+    "nas.io sell courses/assets": {
+        "link": "https://nas.io/",
+        "nkey": 71,
+        "tag": "Money",
+        "index": 52
+    },
+    "All Paths | The Odin Project ": {
+        "link": "https://www.theodinproject.com/paths",
+        "nkey": 70,
+        "tag": "learning",
+        "index": 53
+    },
+    "Learn X in Y Minutes": {
+        "link": "https://learnxinyminutes.com/",
+        "nkey": 33,
+        "tag": "other",
+        "index": 54
+    },
+    "Discord - Project ST": {
+        "link": "https://discord.com/channels/1322208799087399075/1322208799087399078",
+        "nkey": 34,
+        "tag": "other",
+        "index": 55
+    },
+    "Indie SaaS starter": {
+        "link": "https://indiesaas.vercel.app/",
+        "nkey": 36,
+        "tag": "Tool",
+        "index": 56
+    },
+    "Animation softmax reddit manim": {
+        "link": "https://www.reddit.com/r/Btechtards/comments/1l3tazo/made_a_quick_animation_reel_on_softmaxdid_i_nail/",
+        "nkey": 23,
+        "tag": "Tool",
+        "index": 57
+    },
+    "Google AI studio | Gemini API": {
+        "link": "https://aistudio.google.com/prompts/new_chat?pli=1",
+        "nkey": 9,
+        "tag": "AI",
+        "index": 59
+    },
+    "incompetech Music ncp Kevin McLoed": {
+        "link": "https://incompetech.com/music/royalty-free/music.html",
+        "nkey": 8,
+        "tag": "Video Editing",
+        "index": 60
+    },
+    "gmail": {
+        "link": "https://mail.google.com/mail/u/0/#inbox",
+        "nkey": 11,
+        "tag": "other",
+        "index": 61
+    },
+    "Whatsapp": {
+        "link": "S:\\$RECYCLE.BIN\\S-1-5-21-730224958-1290242804-1172610173-1001\\$RKXP1WH",
+        "nkey": 22,
+        "tag": "other",
+        "index": 62
+    },
+    "YouTube ": {
+        "link": "https://www.youtube.com/",
+        "nkey": 27,
+        "tag": "other",
+        "index": 63
+    },
+    "GenP Guides - django-\\/\\/ i K | ": {
+        "link": "https://wiki.dbzer0.com/genp-guides/guide/#guide-2",
+        "nkey": 31,
+        "tag": "Piracy",
+        "index": 64
+    },
+    "WaveSpeedAI  pay to credit": {
+        "link": "https://wavespeed.ai/dashboard",
+        "nkey": 37,
+        "tag": "AI",
+        "index": 65
+    },
+    "AutoAE effects": {
+        "link": "https://autoae.online/hooks",
+        "nkey": 38,
+        "tag": "Video Editing",
+        "index": 66
+    },
+    "pdfdrive books": {
+        "link": "https://wvw.pdfdrive.to/",
+        "nkey": 39,
+        "tag": "Piracy",
+        "index": 67
+    },
+    "Let Me Google That For You": {
+        "link": "https://googlethatforyou.com/",
+        "nkey": 41,
+        "tag": "other",
+        "index": 68
+    },
+    "Passport Automation System | DOCX | PAS SRS": {
+        "link": "https://www.slideshare.net/slideshow/passport-automation-system-82657707/82657707",
+        "nkey": 42,
+        "tag": "learning",
+        "index": 69
+    },
+    "SRS PAS 2": {
+        "link": "https://durgaprasadpuvvala.github.io/On-Learning-Knowledge-main/oose%20lab%20manual.pdf",
+        "nkey": 43,
+        "tag": "learning",
+        "index": 70
+    },
+    "claude artifact musical": {
+        "link": "https://claude.ai/public/artifacts/27e36ad3-716b-4504-bfe8-5fb46ef5ca07",
+        "nkey": 44,
+        "tag": "claude artifacts",
+        "index": 71
+    },
+    "readyme animation presets fbx": {
+        "link": "https://github.com/readyplayerme/animation-library/tree/master/masculine/fbx/locomotion",
+        "nkey": 45,
+        "tag": "Video Editing",
+        "index": 72
+    },
+    "free public apis": {
+        "link": "https://github.com/public-apis/public-apis",
+        "nkey": 46,
+        "tag": "other",
+        "index": 73
+    },
+    "Algorithms DAA Abdul Bari Youtube": {
+        "link": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+        "nkey": 80,
+        "tag": "learning",
+        "index": 74
+    },
+    "Full stack open - not TOP": {
+        "link": "https://fullstackopen.com/en/",
+        "nkey": 47,
+        "tag": "learning",
+        "index": 75
+    },
+    "parttar - Google Gemini ": {
+        "link": "https://gemini.google.com/gem/aac9d018303b/d34675d89df0c37d",
+        "nkey": 99,
+        "tag": "other",
+        "index": 76
+    },
+    "hookpad - make chord music": {
+        "link": "https://hookpad.hooktheory.com/",
+        "nkey": 48,
+        "tag": "Music",
+        "index": 77
+    },
+    "Fonzi Get jobs Hired": {
+        "link": "https://fonzi.ai/",
+        "nkey": 49,
+        "tag": "Money",
+        "index": 78
+    },
+    "brik.space brik animation presets": {
+        "link": "https://brik.space/Gallery/tags:featured",
+        "nkey": 53,
+        "tag": "Video Editing",
+        "index": 79
     }
 }
