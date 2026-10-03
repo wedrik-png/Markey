@@ -10,10 +10,9 @@ from datetime import datetime
 
 
 print("Initiated addFromUI.py ", datetime.now() )
-with open("data/bookmarks.json", "r") as f:    #load the json
-    book = json.load(f)
-
-book_utils.getBook(book)
+from src.dict_to_ahk_arr import load_bookmarks
+book = load_bookmarks()
+book_utils.getBook(book) #provide the book instance to book_utils for its own function calls later
 
 def getDefaultKey(book):
     used = {book[k]["nkey"] for k in book}
@@ -33,6 +32,8 @@ def getTitle(): #get title from window title
         titl = titl.replace("- Chrome", "")
     elif "- Firefox" in titl:
         titl = titl.replace("- Firefox", "")
+    elif "- Vivaldi" in titl:
+        titl = titl.replace("- Vivaldi", "")
     return titl
 
 """
@@ -164,6 +165,8 @@ class MyApp_2(QWidget):
                     linkOfCommonNkey = book[key]["link"]
                     break
             self.show_error(f"Error: The key is already used for {titleOfCommonNkey} ({linkOfCommonNkey})")
+        elif error_state == "error_not_a_link":
+            self.show_error("Error: The copied text is not a link. Please cancel and try again.")
         else:
             self.close()
             

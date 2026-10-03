@@ -9,7 +9,7 @@ import src.book_utils as book_utils
 from PyQt5.QtCore import Qt, QTimer
 from src.edit_from_markey import MyApp_3
 import win32gui, win32con
-from src.dict_to_ahk_arr import write_json_to_files
+from src.dict_to_ahk_arr import load_bookmarks, write_json_to_files
 
 
 
@@ -17,8 +17,7 @@ from src.dict_to_ahk_arr import write_json_to_files
 
 print(os.getcwd())
 
-with open("data/bookmarks.json", "r") as f:    #load the json
-    book = json.load(f)
+book = load_bookmarks()
 book_utils.getBook(book)
 write_json_to_files(book)
 
@@ -236,9 +235,8 @@ class MyApp(QMainWindow):
                 self.edit_window.activateWindow()
                 self.edit_window.exec_()
                 self.repaint()
-                with open("data/bookmarks.json", "r") as f:
-                    self.original_book = json.load(f)
-                    self.book = self.original_book.copy()
+                self.original_book = load_bookmarks()
+                self.book = self.original_book.copy()
 
                 # Refresh tag filter and list
                 self.populate_tag_filter()

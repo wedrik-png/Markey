@@ -1,4 +1,4 @@
-import subprocess, os, sys, shutil, threading, json
+import subprocess, os, sys, shutil, threading, json, winreg
 from pathlib import Path
 
 app_dir = Path(__file__).parent.absolute()
@@ -12,12 +12,9 @@ from PyQt5.QtWidgets import QApplication
 from src.markey import MyApp as MarkeyWindow
 #from addFromUI import MyApp_2, getLink
 from PyQt5.QtCore import Qt
-from src.dict_to_ahk_arr import write_json_to_files
+from src.dict_to_ahk_arr import load_bookmarks, write_json_to_files
 
-with open("data/bookmarks.json") as f: #load json
-    book = json.load(f)
-
-
+book = load_bookmarks()
 write_json_to_files(book)
 
 pythonw = Path(sys.executable)
@@ -45,14 +42,47 @@ def open_addfromui():
 
 
 def main():
-        def get_startup_shortcut_path():
-            startup_folder = os.path.join(os.environ["APPDATA"], r"Microsoft\Windows\Start Menu\Programs\Startup")
-            return os.path.join(startup_folder, "TrayAppShortcut.lnk")
+        STARTUP_SHORTCUT_NAME = "Markey.lnk"
+        STARTUP_APPROVED_KEY = r"Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder"
+        LEGACY_STARTUP_NAMES = ("TrayAppShortcut.lnk",)
+
+        def startup_folder():
+            return os.path.join(os.environ["APPDATA"], r"Microsoft\Windows\Start Menu\Programs\Startup")
+
+        def get_startup_shortcut_path(name=STARTUP_SHORTCUT_NAME):
+            return os.path.join(startup_folder(), name)
 
         def is_startup_enabled():
             return os.path.exists(get_startup_shortcut_path())
 
+        def set_startup_approved(enabled):
+            # Task Manager's Enabled/Disabled flag lives here, separate from the .lnk file
+            key = winreg.CreateKey(winreg.HKEY_CURRENT_USER, STARTUP_APPROVED_KEY)
+            try:
+                names = (STARTUP_SHORTCUT_NAME,) + LEGACY_STARTUP_NAMES
+                if enabled:
+                    winreg.SetValueEx(
+                        key,
+                        STARTUP_SHORTCUT_NAME,
+                        0,
+                        winreg.REG_BINARY,
+                        bytes([0x02, 0x00, 0x00, 0x00]) + b"\x00" * 8,
+                    )
+                else:
+                    for name in names:
+                        try:
+                            winreg.DeleteValue(key, name)
+                        except FileNotFoundError:
+                            pass
+            finally:
+                winreg.CloseKey(key)
+
         def enable_startup():
+            for name in LEGACY_STARTUP_NAMES:
+                legacy = get_startup_shortcut_path(name)
+                if os.path.exists(legacy):
+                    os.remove(legacy)
+
             shortcut_path = get_startup_shortcut_path()
 
             # Detect path of currently running file (exe or py)
@@ -77,13 +107,18 @@ def main():
                shortcut.Arguments = ""  # No need to add anything
 
             shortcut.WorkingDirectory = os.path.dirname(script)
-            shortcut.IconLocation = script
+            icon = os.path.join(os.path.dirname(script), "icon_markey_tray.ico")
+            shortcut.IconLocation = icon if os.path.exists(icon) else target
+            shortcut.Description = "Markey"
             shortcut.save()
+            set_startup_approved(True)
 
         def disable_startup():
-            shortcut_path = get_startup_shortcut_path()
-            if os.path.exists(shortcut_path):
-                os.remove(shortcut_path)
+            for name in (STARTUP_SHORTCUT_NAME,) + LEGACY_STARTUP_NAMES:
+                shortcut_path = get_startup_shortcut_path(name)
+                if os.path.exists(shortcut_path):
+                    os.remove(shortcut_path)
+            set_startup_approved(False)
 
         def toggle_startup():
             if startup_action.isChecked():

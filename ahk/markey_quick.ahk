@@ -15,11 +15,6 @@ readFileToArray(filePath) {
     return arr
 }
 
-; Read all three files into arrays
-titlesArr := readFileToArray(cacheDir "\titles.txt")
-nkeysArr  := readFileToArray(cacheDir "\nkeys.txt")
-linksArr  := readFileToArray(cacheDir "\links.txt")
-
 ; Create GUI with a resizable window
 global MyGui := Gui("+Resize")
 MyGui.Title := "Markey"
@@ -33,6 +28,11 @@ if (!Input.Result || Input.Value = "") {
     ;MsgBox("No input provided.", "Error", 48)
     return
 }
+
+; Read cache after the prompt so a save during the InputBox is visible
+titlesArr := readFileToArray(cacheDir "\titles.txt")
+nkeysArr  := readFileToArray(cacheDir "\nkeys.txt")
+linksArr  := readFileToArray(cacheDir "\links.txt")
 
 inputParts := StrSplit(Input.Value, " ")
 nkey_inp := inputParts[1] + 0  ; Convert to number

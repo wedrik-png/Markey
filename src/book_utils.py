@@ -1,8 +1,7 @@
 import json, subprocess, sys, os
+from urllib.parse import urlparse
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from src.dict_to_ahk_arr import write_json_to_files
-
+from src.dict_to_ahk_arr import BOOKMARKS_JSON, write_json_to_files
 
 
 book = None
@@ -28,7 +27,11 @@ def addBook(link, title, nkey, tag = "unset"):   #add a bookmark
             print("key needs to be unique!!!\n")
             printBook(key)
             return "error_nkey"
-    max_index = 0
+    parsed_link = urlparse(link)
+    if not (parsed_link.scheme in ("http", "https") and parsed.netloc):
+        return "error_not_a_link"
+    
+    max_index = 0                 #to find next unique index
     for key in book.keys():
         if book[key]["index"] > max_index:
             max_index = book[key]["index"]
@@ -57,9 +60,11 @@ def deleteBook(x):
 
 
     
-def overwriteBook():        #overwrite the json
-    with open("data/bookmarks.json", "w") as f:
+def overwriteBook():
+    with open(BOOKMARKS_JSON, "w", encoding="utf-8") as f:
         json.dump(book, f, indent=4)
+        f.flush()
+        os.fsync(f.fileno())
     write_json_to_files(book)
 
 
