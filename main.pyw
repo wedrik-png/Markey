@@ -6,7 +6,7 @@ os.chdir(app_dir)
 sys.path.insert(0, str(app_dir))
 
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
+from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction, QMessageBox
 import win32com.client   
 from PyQt5.QtWidgets import QApplication
 from src.markey import MyApp as MarkeyWindow
@@ -22,9 +22,31 @@ if pythonw.name.lower() == "python.exe":
     candidate = pythonw.with_name("pythonw.exe")
     if candidate.exists():
         pythonw = candidate
-ahk_exe = app_dir / "AutoHotkey.exe"
 ahk_script = app_dir / "ahk" / "main_ahk.ahk"
-subprocess.Popen([str(ahk_exe), str(ahk_script), str(pythonw)], cwd=str(app_dir))
+
+
+def find_autohotkey():
+    candidates = [app_dir / "AutoHotkey.exe"]
+    installed = shutil.which("AutoHotkey.exe")
+    if installed:
+        candidates.append(Path(installed))
+
+    install_roots = [
+        os.environ.get("ProgramFiles"),
+        os.environ.get("ProgramFiles(x86)"),
+    ]
+    local_app_data = os.environ.get("LOCALAPPDATA")
+    if local_app_data:
+        install_roots.append(os.path.join(local_app_data, "Programs"))
+
+    candidates.extend(
+        Path(root) / "AutoHotkey" / "v2" / "AutoHotkey.exe"
+        for root in install_roots
+        if root
+    )
+
+    return next((candidate for candidate in candidates if candidate.is_file()), None)
+
 
 def runScript(path):
     subprocess.Popen([sys.executable, path])
@@ -136,6 +158,28 @@ def main():
         print("Working directory: ", os.getcwd())
         app = QApplication([])
         app.setQuitOnLastWindowClosed(False)
+        ahk_exe = find_autohotkey()
+        if ahk_exe is None:
+            QMessageBox.critical(
+                None,
+                "AutoHotkey not found",
+                "Markey requires AutoHotkey v2. Install AutoHotkey v2 or add "
+                "AutoHotkey.exe to PATH, then restart Markey.",
+            )
+            return
+        try:
+            subprocess.Popen(
+                [str(ahk_exe), str(ahk_script), str(pythonw)],
+                cwd=str(app_dir),
+            )
+        except OSError as error:
+            QMessageBox.critical(
+                None,
+                "Could not start AutoHotkey",
+                f"Markey found AutoHotkey at:\n{ahk_exe}\n\n{error}",
+            )
+            return
+
         icon = QIcon("icon_markey_tray.ico")
         tray = QSystemTrayIcon(icon)
         tray.setToolTip("Markey")

@@ -1,109 +1,134 @@
 # Markey
 
-Markey is a lightweight bookmark manager that combines Python and AutoHotkey to quickly add, search, and open bookmarks without leaving your workflow.
-Originally built entirely in AutoHotkey, it has now been largely rewritten in Python for better performance and scalability.
+Markey is a lightweight Windows bookmark manager designed for **fast, keyboard-driven access to your saved websites**.
 
----
+Each bookmark has a unique **key** (a number). Once a website is saved, you can open it by simply entering its key — without searching through a bookmark list.
 
-## ✨ Features
+## The idea
 
-* **Quick Bookmarking** — Add bookmarks instantly using a hotkey
-* **Tag Organization** — Assign or create tags while bookmarking
-* **Fast Access** — Search and open bookmarks via hotkeys or menu
-* **Open with Key** — Launch bookmarks instantly using numeric keys
-* **Lightweight & Portable** — No database or server required
+Markey has three main workflows:
 
----
+### 1. Save the current page
 
-## 📦 Installation
+While browsing, press:
 
-### For General Users
+**`Ctrl + Shift + Alt + B`**
 
-If you just want to use Markey:
+Markey opens a save window for the current browser page. You can:
 
-1. Download the latest release from the
-   https://github.com/wedrik-png/Markey/releases
-2. Extract the ZIP file
-3. Run `main.exe`
-4. Start using Markey from the system tray
+* Change the bookmark title
+* Choose its key
+* Add an existing tag or create a new one
 
-> No installation required — fully portable.
 
----
+### 2. Quickly open a bookmark
 
-### For Developers
+Press:
 
-#### 1. Clone the Repository
+**`Ctrl + Shift + B`**
 
-```bash
-git clone https://github.com/wedrik-png/Markey.git
-cd Markey
-```
+A small window appears asking for a bookmark key.
 
-#### 2. Create a Virtual Environment
+Enter the key and press Enter, and Markey immediately opens the corresponding website.
 
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
+No bookmark list. No search. 
 
-#### 3. Install Dependencies
+This is the fastest way to access bookmarks when you know their keys.
 
-```bash
-pip install -r requirements.txt
-```
+### 3. Manage and browse bookmarks
 
-#### 4. Install AutoHotkey v2
+Press:
 
-Download from: https://www.autohotkey.com/
+**`Ctrl + Alt + B`**
 
----
+This opens the full bookmark manager.
 
-## 🚀 Usage
+Here you can:
 
-### Start the Application
-
-```bash
-python main.pyw
-```
-
-Or run the compiled executable:
-
-```
-main.exe
-```
-
----
-
-## ⌨️ Hotkeys
-
-* **Add Bookmark** → `Ctrl + Shift + Alt + B`
-* **Quick Open (Key-based)** → `Ctrl + Shift + B`
-* **Full Manager View** → `Ctrl + Alt + B`
-
-### Features in Manager View
-
+* View all saved bookmarks
 * Search bookmarks
 * Filter by tag
-* Right-click to edit/delete
-* Open bookmarks using assigned keys
+* Open a bookmark by clicking it
+* Edit bookmarks
+* Delete bookmarks
+* Enter a key to open a bookmark
 
----
+Use this window when you don't remember a bookmark's key or when you want to manage your collection.
 
-## 📄 License
+## Features
 
-Licensed under the MIT License — see [LICENSE](LICENSE)
+* Keyboard-driven bookmark opening
+* Assignable numeric keys for bookmarks
+* Quick bookmark the current browser page
+* Tags for organizing bookmarks
+* Edit and delete bookmarks
+* System tray operation
+* Full bookmark management GUI
+* Browser-independent — keep one bookmark collection instead of managing separate bookmarks across browsers and profiles.
 
----
+## Requirements
 
-## 🤝 Contributing
+* Windows
+* Python 3
+* AutoHotkey v2
 
-Pull requests are welcome.
-For major changes, open an issue first to discuss your ideas.
+Install AutoHotkey v2 from [autohotkey.com](https://www.autohotkey.com/).
 
----
+Markey checks for a bundled `AutoHotkey.exe`, then searches `PATH` and common installation folders. You do not need to copy AutoHotkey into the repository if it is installed in one of those locations.
 
-## 💬 Contact
+## Install
 
-Created by Manan Juneja
-GitHub: https://github.com/wedrik-png
+1. Clone the repository:
+
+   ```powershell
+   git clone https://github.com/wedrik-png/Markey.git
+   cd Markey
+   ```
+
+2. Create a virtual environment:
+
+   ```powershell
+   py -m venv venv
+   ```
+
+3. Install the dependencies:
+
+   ```powershell
+   venv\Scripts\python.exe -m pip install -r requirements.txt
+   ```
+
+## Start Markey
+
+Run `run_markey.vbs` from the repository folder.
+
+You can double-click it in File Explorer, or launch it from PowerShell:
+
+```powershell
+wscript .\run_markey.vbs
+```
+
+The VBS launcher starts Markey using the project's virtual environment without opening a console window. Start Markey this way so its hotkeys use the correct Python environment.
+
+Once running, Markey stays in the system tray.
+
+Right-click the tray icon to:
+
+* Open the bookmark manager
+* Enable or disable startup
+* Exit Markey
+
+## Keyboard shortcuts
+
+| Shortcut                 | Action                         |
+| ------------------------ | ------------------------------ |
+| `Ctrl + Shift + Alt + B` | Save the current browser page  |
+| `Ctrl + Shift + B`       | Quickly open a bookmark by key |
+| `Ctrl + Alt + B`         | Open the full bookmark manager |
+
+## License
+
+Markey is licensed under the MIT License. See [LICENSE](LICENSE).
+
+## Contributing
+
+Contributions are welcome. For substantial changes, please open an issue to discuss the proposal before submitting a pull request.
